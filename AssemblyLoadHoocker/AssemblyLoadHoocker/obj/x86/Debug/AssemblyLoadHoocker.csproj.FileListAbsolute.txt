@@ -1,0 +1,10 @@
+D:\CodeBlocksProjects\AssemblyLoadHoocker\AssemblyLoadHoocker\bin\Debug\AssemblyLoadHoocker.exe
+D:\CodeBlocksProjects\AssemblyLoadHoocker\AssemblyLoadHoocker\bin\Debug\AssemblyLoadHoocker.pdb
+D:\CodeBlocksProjects\AssemblyLoadHoocker\AssemblyLoadHoocker\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\CodeBlocksProjects\AssemblyLoadHoocker\AssemblyLoadHoocker\obj\x86\Debug\AssemblyLoadHoocker.exe
+D:\CodeBlocksProjects\AssemblyLoadHoocker\AssemblyLoadHoocker\obj\x86\Debug\AssemblyLoadHoocker.pdb
+D:\Next2Tools\NET\AssemblyLoadHoocker\AssemblyLoadHoocker\bin\Debug\AssemblyLoadHoocker.exe
+D:\Next2Tools\NET\AssemblyLoadHoocker\AssemblyLoadHoocker\bin\Debug\AssemblyLoadHoocker.pdb
+D:\Next2Tools\NET\AssemblyLoadHoocker\AssemblyLoadHoocker\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Next2Tools\NET\AssemblyLoadHoocker\AssemblyLoadHoocker\obj\x86\Debug\AssemblyLoadHoocker.exe
+D:\Next2Tools\NET\AssemblyLoadHoocker\AssemblyLoadHoocker\obj\x86\Debug\AssemblyLoadHoocker.pdb

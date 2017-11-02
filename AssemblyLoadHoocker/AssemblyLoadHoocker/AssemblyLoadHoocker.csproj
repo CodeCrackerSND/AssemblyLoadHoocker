@@ -1,0 +1,326 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{5096D9E2-C454-475E-AC21-9F233831A90E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AssemblyLoadHoocker</RootNamespace>
+    <AssemblyName>AssemblyLoadHoocker</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Mihai\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dnlib\DotNet\AccessChecker.cs" />
+    <Compile Include="dnlib\DotNet\AllTypesHelper.cs" />
+    <Compile Include="dnlib\DotNet\AssemblyAttributes.cs" />
+    <Compile Include="dnlib\DotNet\AssemblyDef.cs" />
+    <Compile Include="dnlib\DotNet\AssemblyHash.cs" />
+    <Compile Include="dnlib\DotNet\AssemblyHashAlgorithm.cs" />
+    <Compile Include="dnlib\DotNet\AssemblyNameComparer.cs" />
+    <Compile Include="dnlib\DotNet\AssemblyNameInfo.cs" />
+    <Compile Include="dnlib\DotNet\AssemblyRef.cs" />
+    <Compile Include="dnlib\DotNet\AssemblyResolver.cs" />
+    <Compile Include="dnlib\DotNet\CallingConvention.cs" />
+    <Compile Include="dnlib\DotNet\CallingConventionSig.cs" />
+    <Compile Include="dnlib\DotNet\ClassLayout.cs" />
+    <Compile Include="dnlib\DotNet\Constant.cs" />
+    <Compile Include="dnlib\DotNet\CorLibTypes.cs" />
+    <Compile Include="dnlib\DotNet\CustomAttribute.cs" />
+    <Compile Include="dnlib\DotNet\CustomAttributeCollection.cs" />
+    <Compile Include="dnlib\DotNet\CustomAttributeReader.cs" />
+    <Compile Include="dnlib\DotNet\DeclSecurity.cs" />
+    <Compile Include="dnlib\DotNet\DeclSecurityReader.cs" />
+    <Compile Include="dnlib\DotNet\ElementType.cs" />
+    <Compile Include="dnlib\DotNet\Emit\Code.cs" />
+    <Compile Include="dnlib\DotNet\Emit\DynamicMethodBodyReader.cs" />
+    <Compile Include="dnlib\DotNet\Emit\ExceptionHandler.cs" />
+    <Compile Include="dnlib\DotNet\Emit\ExceptionHandlerType.cs" />
+    <Compile Include="dnlib\DotNet\Emit\Extensions.cs" />
+    <Compile Include="dnlib\DotNet\Emit\FlowControl.cs" />
+    <Compile Include="dnlib\DotNet\Emit\Instruction.cs" />
+    <Compile Include="dnlib\DotNet\Emit\InstructionPrinter.cs" />
+    <Compile Include="dnlib\DotNet\Emit\InvalidMethodException.cs" />
+    <Compile Include="dnlib\DotNet\Emit\LocalList.cs" />
+    <Compile Include="dnlib\DotNet\Emit\MethodBody.cs" />
+    <Compile Include="dnlib\DotNet\Emit\MethodBodyReader.cs" />
+    <Compile Include="dnlib\DotNet\Emit\MethodBodyReaderBase.cs" />
+    <Compile Include="dnlib\DotNet\Emit\MethodTableToTypeConverter.cs" />
+    <Compile Include="dnlib\DotNet\Emit\MethodUtils.cs" />
+    <Compile Include="dnlib\DotNet\Emit\OpCode.cs" />
+    <Compile Include="dnlib\DotNet\Emit\OpCodes.cs" />
+    <Compile Include="dnlib\DotNet\Emit\OpCodeType.cs" />
+    <Compile Include="dnlib\DotNet\Emit\OperandType.cs" />
+    <Compile Include="dnlib\DotNet\Emit\StackBehaviour.cs" />
+    <Compile Include="dnlib\DotNet\EventAttributes.cs" />
+    <Compile Include="dnlib\DotNet\EventDef.cs" />
+    <Compile Include="dnlib\DotNet\ExportedType.cs" />
+    <Compile Include="dnlib\DotNet\Extensions.cs" />
+    <Compile Include="dnlib\DotNet\FieldAttributes.cs" />
+    <Compile Include="dnlib\DotNet\FieldDef.cs" />
+    <Compile Include="dnlib\DotNet\FileAttributes.cs" />
+    <Compile Include="dnlib\DotNet\FileDef.cs" />
+    <Compile Include="dnlib\DotNet\FullNameCreator.cs" />
+    <Compile Include="dnlib\DotNet\GenericArguments.cs" />
+    <Compile Include="dnlib\DotNet\GenericParam.cs" />
+    <Compile Include="dnlib\DotNet\GenericParamAttributes.cs" />
+    <Compile Include="dnlib\DotNet\GenericParamConstraint.cs" />
+    <Compile Include="dnlib\DotNet\GenericParamContext.cs" />
+    <Compile Include="dnlib\DotNet\IAssemblyResolver.cs" />
+    <Compile Include="dnlib\DotNet\ICodedToken.cs" />
+    <Compile Include="dnlib\DotNet\ICorLibTypes.cs" />
+    <Compile Include="dnlib\DotNet\ICustomAttribute.cs" />
+    <Compile Include="dnlib\DotNet\IDecrypters.cs" />
+    <Compile Include="dnlib\DotNet\ILogger.cs" />
+    <Compile Include="dnlib\DotNet\ImplMap.cs" />
+    <Compile Include="dnlib\DotNet\Importer.cs" />
+    <Compile Include="dnlib\DotNet\InterfaceImpl.cs" />
+    <Compile Include="dnlib\DotNet\IResolver.cs" />
+    <Compile Include="dnlib\DotNet\IType.cs" />
+    <Compile Include="dnlib\DotNet\ITypeDefFinder.cs" />
+    <Compile Include="dnlib\DotNet\IVariable.cs" />
+    <Compile Include="dnlib\DotNet\ManifestResource.cs" />
+    <Compile Include="dnlib\DotNet\ManifestResourceAttributes.cs" />
+    <Compile Include="dnlib\DotNet\MarshalBlobReader.cs" />
+    <Compile Include="dnlib\DotNet\MarshalType.cs" />
+    <Compile Include="dnlib\DotNet\MDToken.cs" />
+    <Compile Include="dnlib\DotNet\MD\BlobStream.cs" />
+    <Compile Include="dnlib\DotNet\MD\CodedToken.cs" />
+    <Compile Include="dnlib\DotNet\MD\ColumnInfo.cs" />
+    <Compile Include="dnlib\DotNet\MD\ColumnSize.cs" />
+    <Compile Include="dnlib\DotNet\MD\ComImageFlags.cs" />
+    <Compile Include="dnlib\DotNet\MD\CompressedMetaData.cs" />
+    <Compile Include="dnlib\DotNet\MD\DotNetStream.cs" />
+    <Compile Include="dnlib\DotNet\MD\DotNetTableSizes.cs" />
+    <Compile Include="dnlib\DotNet\MD\ENCMetaData.cs" />
+    <Compile Include="dnlib\DotNet\MD\GuidStream.cs" />
+    <Compile Include="dnlib\DotNet\MD\HeapType.cs" />
+    <Compile Include="dnlib\DotNet\MD\HotHeapStream.cs" />
+    <Compile Include="dnlib\DotNet\MD\HotHeapVersion.cs" />
+    <Compile Include="dnlib\DotNet\MD\HotStream.cs" />
+    <Compile Include="dnlib\DotNet\MD\HotTableStream.cs" />
+    <Compile Include="dnlib\DotNet\MD\ImageCor20Header.cs" />
+    <Compile Include="dnlib\DotNet\MD\IMetaData.cs" />
+    <Compile Include="dnlib\DotNet\MD\IRowReaders.cs" />
+    <Compile Include="dnlib\DotNet\MD\MDHeaderRuntimeVersion.cs" />
+    <Compile Include="dnlib\DotNet\MD\MDStreamFlags.cs" />
+    <Compile Include="dnlib\DotNet\MD\MDTable.cs" />
+    <Compile Include="dnlib\DotNet\MD\MetaData.cs" />
+    <Compile Include="dnlib\DotNet\MD\MetaDataCreator.cs" />
+    <Compile Include="dnlib\DotNet\MD\MetaDataHeader.cs" />
+    <Compile Include="dnlib\DotNet\MD\RawRowEqualityComparer.cs" />
+    <Compile Include="dnlib\DotNet\MD\RawTableRows.cs" />
+    <Compile Include="dnlib\DotNet\MD\RidList.cs" />
+    <Compile Include="dnlib\DotNet\MD\StorageFlags.cs" />
+    <Compile Include="dnlib\DotNet\MD\StreamHeader.cs" />
+    <Compile Include="dnlib\DotNet\MD\StringsStream.cs" />
+    <Compile Include="dnlib\DotNet\MD\Table.cs" />
+    <Compile Include="dnlib\DotNet\MD\TableInfo.cs" />
+    <Compile Include="dnlib\DotNet\MD\TablesStream.cs" />
+    <Compile Include="dnlib\DotNet\MD\TablesStream_Read.cs" />
+    <Compile Include="dnlib\DotNet\MD\USStream.cs" />
+    <Compile Include="dnlib\DotNet\MemberMDInitializer.cs" />
+    <Compile Include="dnlib\DotNet\MemberRef.cs" />
+    <Compile Include="dnlib\DotNet\MethodAttributes.cs" />
+    <Compile Include="dnlib\DotNet\MethodDef.cs" />
+    <Compile Include="dnlib\DotNet\MethodImplAttributes.cs" />
+    <Compile Include="dnlib\DotNet\MethodOverride.cs" />
+    <Compile Include="dnlib\DotNet\MethodSemanticsAttributes.cs" />
+    <Compile Include="dnlib\DotNet\MethodSpec.cs" />
+    <Compile Include="dnlib\DotNet\ModuleContext.cs" />
+    <Compile Include="dnlib\DotNet\ModuleDef.cs" />
+    <Compile Include="dnlib\DotNet\ModuleDefMD.cs" />
+    <Compile Include="dnlib\DotNet\ModuleKind.cs" />
+    <Compile Include="dnlib\DotNet\ModuleRef.cs" />
+    <Compile Include="dnlib\DotNet\NativeType.cs" />
+    <Compile Include="dnlib\DotNet\NullResolver.cs" />
+    <Compile Include="dnlib\DotNet\ParamAttributes.cs" />
+    <Compile Include="dnlib\DotNet\ParamDef.cs" />
+    <Compile Include="dnlib\DotNet\ParameterList.cs" />
+    <Compile Include="dnlib\DotNet\PInvokeAttributes.cs" />
+    <Compile Include="dnlib\DotNet\PropertyAttributes.cs" />
+    <Compile Include="dnlib\DotNet\PropertyDef.cs" />
+    <Compile Include="dnlib\DotNet\PublicKey.cs" />
+    <Compile Include="dnlib\DotNet\PublicKeyBase.cs" />
+    <Compile Include="dnlib\DotNet\PublicKeyToken.cs" />
+    <Compile Include="dnlib\DotNet\RecursionCounter.cs" />
+    <Compile Include="dnlib\DotNet\ReflectionExtensions.cs" />
+    <Compile Include="dnlib\DotNet\ResolveException.cs" />
+    <Compile Include="dnlib\DotNet\Resolver.cs" />
+    <Compile Include="dnlib\DotNet\Resource.cs" />
+    <Compile Include="dnlib\DotNet\ResourceCollection.cs" />
+    <Compile Include="dnlib\DotNet\SecurityAction.cs" />
+    <Compile Include="dnlib\DotNet\SecurityAttribute.cs" />
+    <Compile Include="dnlib\DotNet\SerializationType.cs" />
+    <Compile Include="dnlib\DotNet\SigComparer.cs" />
+    <Compile Include="dnlib\DotNet\SignatureReader.cs" />
+    <Compile Include="dnlib\DotNet\StandAloneSig.cs" />
+    <Compile Include="dnlib\DotNet\StrongNameKey.cs" />
+    <Compile Include="dnlib\DotNet\StrongNameSigner.cs" />
+    <Compile Include="dnlib\DotNet\TypeAttributes.cs" />
+    <Compile Include="dnlib\DotNet\TypeDef.cs" />
+    <Compile Include="dnlib\DotNet\TypeDefFinder.cs" />
+    <Compile Include="dnlib\DotNet\TypeHelper.cs" />
+    <Compile Include="dnlib\DotNet\TypeNameParser.cs" />
+    <Compile Include="dnlib\DotNet\TypeRef.cs" />
+    <Compile Include="dnlib\DotNet\TypeSig.cs" />
+    <Compile Include="dnlib\DotNet\TypeSpec.cs" />
+    <Compile Include="dnlib\DotNet\UTF8String.cs" />
+    <Compile Include="dnlib\DotNet\Utils.cs" />
+    <Compile Include="dnlib\DotNet\VariantType.cs" />
+    <Compile Include="dnlib\DotNet\VTableFixups.cs" />
+    <Compile Include="dnlib\DotNet\Writer\BinaryReaderChunk.cs" />
+    <Compile Include="dnlib\DotNet\Writer\BlobHeap.cs" />
+    <Compile Include="dnlib\DotNet\Writer\ByteArrayChunk.cs" />
+    <Compile Include="dnlib\DotNet\Writer\ChunkList.cs" />
+    <Compile Include="dnlib\DotNet\Writer\ChunkListBase.cs" />
+    <Compile Include="dnlib\DotNet\Writer\CustomAttributeWriter.cs" />
+    <Compile Include="dnlib\DotNet\Writer\DebugDirectory.cs" />
+    <Compile Include="dnlib\DotNet\Writer\DeclSecurityWriter.cs" />
+    <Compile Include="dnlib\DotNet\Writer\Extensions.cs" />
+    <Compile Include="dnlib\DotNet\Writer\GuidHeap.cs" />
+    <Compile Include="dnlib\DotNet\Writer\HeapBase.cs" />
+    <Compile Include="dnlib\DotNet\Writer\HotHeap.cs" />
+    <Compile Include="dnlib\DotNet\Writer\HotPool.cs" />
+    <Compile Include="dnlib\DotNet\Writer\HotTable.cs" />
+    <Compile Include="dnlib\DotNet\Writer\IChunk.cs" />
+    <Compile Include="dnlib\DotNet\Writer\IHeap.cs" />
+    <Compile Include="dnlib\DotNet\Writer\ImageCor20Header.cs" />
+    <Compile Include="dnlib\DotNet\Writer\IMetaDataListener.cs" />
+    <Compile Include="dnlib\DotNet\Writer\IModuleWriterListener.cs" />
+    <Compile Include="dnlib\DotNet\Writer\ImportAddressTable.cs" />
+    <Compile Include="dnlib\DotNet\Writer\ImportDirectory.cs" />
+    <Compile Include="dnlib\DotNet\Writer\IOffsetHeap.cs" />
+    <Compile Include="dnlib\DotNet\Writer\IWriterError.cs" />
+    <Compile Include="dnlib\DotNet\Writer\MarshalBlobWriter.cs" />
+    <Compile Include="dnlib\DotNet\Writer\MaxStackCalculator.cs" />
+    <Compile Include="dnlib\DotNet\Writer\MDTable.cs" />
+    <Compile Include="dnlib\DotNet\Writer\MDTableWriter.cs" />
+    <Compile Include="dnlib\DotNet\Writer\MetaData.cs" />
+    <Compile Include="dnlib\DotNet\Writer\MetaDataHeader.cs" />
+    <Compile Include="dnlib\DotNet\Writer\MethodBody.cs" />
+    <Compile Include="dnlib\DotNet\Writer\MethodBodyChunks.cs" />
+    <Compile Include="dnlib\DotNet\Writer\MethodBodyWriter.cs" />
+    <Compile Include="dnlib\DotNet\Writer\MethodBodyWriterBase.cs" />
+    <Compile Include="dnlib\DotNet\Writer\ModuleWriter.cs" />
+    <Compile Include="dnlib\DotNet\Writer\ModuleWriterBase.cs" />
+    <Compile Include="dnlib\DotNet\Writer\ModuleWriterException.cs" />
+    <Compile Include="dnlib\DotNet\Writer\NativeModuleWriter.cs" />
+    <Compile Include="dnlib\DotNet\Writer\NetResources.cs" />
+    <Compile Include="dnlib\DotNet\Writer\NormalMetaData.cs" />
+    <Compile Include="dnlib\DotNet\Writer\PEHeaders.cs" />
+    <Compile Include="dnlib\DotNet\Writer\PESection.cs" />
+    <Compile Include="dnlib\DotNet\Writer\PreserveTokensMetaData.cs" />
+    <Compile Include="dnlib\DotNet\Writer\RelocDirectory.cs" />
+    <Compile Include="dnlib\DotNet\Writer\SectionSizes.cs" />
+    <Compile Include="dnlib\DotNet\Writer\SignatureWriter.cs" />
+    <Compile Include="dnlib\DotNet\Writer\StartupStub.cs" />
+    <Compile Include="dnlib\DotNet\Writer\StringsHeap.cs" />
+    <Compile Include="dnlib\DotNet\Writer\StrongNameSignature.cs" />
+    <Compile Include="dnlib\DotNet\Writer\TablesHeap.cs" />
+    <Compile Include="dnlib\DotNet\Writer\UniqueChunkList.cs" />
+    <Compile Include="dnlib\DotNet\Writer\USHeap.cs" />
+    <Compile Include="dnlib\DotNet\Writer\Win32ResourcesChunk.cs" />
+    <Compile Include="dnlib\DotNet\Writer\WriterUtils.cs" />
+    <Compile Include="dnlib\ExtensionAttribute.cs" />
+    <Compile Include="dnlib\HandleProcessCorruptedStateExceptionsAttribute.cs" />
+    <Compile Include="dnlib\IO\BinaryReaderStream.cs" />
+    <Compile Include="dnlib\IO\FileOffset.cs" />
+    <Compile Include="dnlib\IO\FileSection.cs" />
+    <Compile Include="dnlib\IO\IBinaryReader.cs" />
+    <Compile Include="dnlib\IO\IFileSection.cs" />
+    <Compile Include="dnlib\IO\IImageStream.cs" />
+    <Compile Include="dnlib\IO\IImageStreamCreator.cs" />
+    <Compile Include="dnlib\IO\IOExtensions.cs" />
+    <Compile Include="dnlib\IO\MemoryImageStream.cs" />
+    <Compile Include="dnlib\IO\MemoryMappedFileStreamCreator.cs" />
+    <Compile Include="dnlib\IO\MemoryStreamCreator.cs" />
+    <Compile Include="dnlib\IO\UnmanagedMemoryImageStream.cs" />
+    <Compile Include="dnlib\IO\UnmanagedMemoryStreamCreator.cs" />
+    <Compile Include="dnlib\PE\Characteristics.cs" />
+    <Compile Include="dnlib\PE\DllCharacteristics.cs" />
+    <Compile Include="dnlib\PE\IImageOptionalHeader.cs" />
+    <Compile Include="dnlib\PE\ImageDataDirectory.cs" />
+    <Compile Include="dnlib\PE\ImageDosHeader.cs" />
+    <Compile Include="dnlib\PE\ImageFileHeader.cs" />
+    <Compile Include="dnlib\PE\ImageNTHeaders.cs" />
+    <Compile Include="dnlib\PE\ImageOptionalHeader32.cs" />
+    <Compile Include="dnlib\PE\ImageOptionalHeader64.cs" />
+    <Compile Include="dnlib\PE\ImageSectionHeader.cs" />
+    <Compile Include="dnlib\PE\IPEImage.cs" />
+    <Compile Include="dnlib\PE\IPEType.cs" />
+    <Compile Include="dnlib\PE\Machine.cs" />
+    <Compile Include="dnlib\PE\PEExtensions.cs" />
+    <Compile Include="dnlib\PE\PEImage.cs" />
+    <Compile Include="dnlib\PE\PEInfo.cs" />
+    <Compile Include="dnlib\PE\RVA.cs" />
+    <Compile Include="dnlib\PE\Subsystem.cs" />
+    <Compile Include="dnlib\Threading\Extensions.cs" />
+    <Compile Include="dnlib\Threading\IThreadSafeList.cs" />
+    <Compile Include="dnlib\Threading\Lock.cs" />
+    <Compile Include="dnlib\Threading\ThreadSafeListCreator.cs" />
+    <Compile Include="dnlib\Threading\ThreadSafeListWrapper.cs" />
+    <Compile Include="dnlib\Utils\Extensions.cs" />
+    <Compile Include="dnlib\Utils\ILazyList.cs" />
+    <Compile Include="dnlib\Utils\LazyList.cs" />
+    <Compile Include="dnlib\Utils\MFunc.cs" />
+    <Compile Include="dnlib\Utils\SimpleLazyList.cs" />
+    <Compile Include="dnlib\Utils\UserValue.cs" />
+    <Compile Include="dnlib\W32Resources\ResourceData.cs" />
+    <Compile Include="dnlib\W32Resources\ResourceDirectory.cs" />
+    <Compile Include="dnlib\W32Resources\ResourceDirectoryEntry.cs" />
+    <Compile Include="dnlib\W32Resources\ResourceName.cs" />
+    <Compile Include="dnlib\W32Resources\Win32Resources.cs" />
+    <Compile Include="LoadHooking.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="dnlib\dnlib.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dnlib" />
+    <Folder Include="dnlib\DotNet" />
+    <Folder Include="dnlib\DotNet\Emit" />
+    <Folder Include="dnlib\DotNet\MD" />
+    <Folder Include="dnlib\DotNet\Writer" />
+    <Folder Include="dnlib\IO" />
+    <Folder Include="dnlib\PE" />
+    <Folder Include="dnlib\Threading" />
+    <Folder Include="dnlib\Utils" />
+    <Folder Include="dnlib\W32Resources" />
+  </ItemGroup>
+</Project>
